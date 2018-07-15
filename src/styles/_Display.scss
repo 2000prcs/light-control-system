@@ -1,0 +1,10 @@
+$border: 1px solid black;
+$background-color: black;
+$color: white;
+
+.display {
+  border: $border;
+  background-color: $background-color;
+  color: $color;
+  width: 60vw;
+}

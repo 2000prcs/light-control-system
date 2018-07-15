@@ -1,0 +1,26 @@
+.nav {
+  border: 1px solid black;
+  background-color: black;
+  color: white; }
+
+.menu {
+  border: 1px solid black; }
+
+.control {
+  border: 1px solid black;
+  width: 100vw; }
+
+.display {
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  width: 60vw; }
+
+body {
+  font-size: 20px;
+  font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+.main {
+  display: flex; }
+
+/*# sourceMappingURL=styles.css.map */

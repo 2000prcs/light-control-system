@@ -12,13 +12,20 @@ module.exports = {
       {
         test: /\.jsx?$/,
         include: [
-          path.resolve(__dirname, 'client')
+          path.resolve(__dirname, 'src')
         ],
         loader: 'babel-loader',
         options: {
-          presets: ['env', 'react']
+          presets: ['react', 'es2015']
         }
-      }
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          { loader: 'css-loader' },
+          { loader: 'sass-loader' },
+        ],
+      },
     ]
   }
 }
