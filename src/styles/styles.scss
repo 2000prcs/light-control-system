@@ -1,0 +1,14 @@
+@import 'Nav';
+@import 'Menu';
+@import 'Control';
+@import 'Display';
+$font-stack: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+body {
+  font-size: 20px;
+  font-family: $font-stack;
+}
+
+.main {
+  display: flex;
+}

@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack -d -w",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "style": "sass src/styles/styles.scss public/styles.css",
+    "test": "jest --coverage"
   },
   "author": "Moyeong Lee",
   "license": "ISC",
   "dependencies": {
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "rendition": "^4.18.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -24,6 +26,8 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.10.0",
     "webpack": "^4.16.0",
-    "webpack-cli": "^3.0.8"
+    "webpack-cli": "^3.0.8",
+    "css-loader": "^1.0.0",
+    "sass-loader": "^7.0.3"
   }
 }

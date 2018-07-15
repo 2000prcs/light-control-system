@@ -18,7 +18,14 @@ module.exports = {
         options: {
           presets: ['react', 'es2015']
         }
-      }
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          { loader: 'css-loader' },
+          { loader: 'sass-loader' },
+        ],
+      },
     ]
   }
 }
