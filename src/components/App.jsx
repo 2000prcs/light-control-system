@@ -7,8 +7,31 @@ import Menu from './Menu.jsx';
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      data: [],
+    };
+
+    this.getRoomInfo = this.getRoomInfo.bind(this);
   }
+
+  componentDidMount() {
+    this.getRoomInfo();
+  }
+
+
+  getRoomInfo() {
+    fetch('http://localhost:3000/api/v1/device')
+      .then((response) => {
+        console.log('Data received');
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        this.setState({ data });
+      })
+      .catch(errors => console.error(errors));
+  }
+
 
   render() {
     return (
@@ -21,7 +44,7 @@ export default class App extends Component {
         </div>
         <div className="main">
           <div className="control">
-            <Control />
+            <Control roomData={this.state.data} />
           </div>
           <div className="display">
             <Display />
