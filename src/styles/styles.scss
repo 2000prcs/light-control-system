@@ -2,7 +2,9 @@
 @import 'Menu';
 @import 'Control';
 @import 'Display';
-$font-stack: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+// @import '../../node_modules/react-toggle-switch/dist/css/switch.min.css';
+
+$font-stack: Roboto,Arial,sans-serif;
 
 body {
   font-size: 20px;

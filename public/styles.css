@@ -4,7 +4,8 @@
   color: white; }
 
 .menu {
-  border: 1px solid black; }
+  border: 1px solid black;
+  background-color: #2b2b27; }
 
 .control {
   border: 1px solid black;
@@ -12,13 +13,13 @@
 
 .display {
   border: 1px solid black;
-  background-color: black;
+  background-color: #2b2727;
   color: white;
   width: 60vw; }
 
 body {
   font-size: 20px;
-  font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: Roboto, Arial, sans-serif; }
 
 .main {
   display: flex; }
