@@ -1,21 +1,58 @@
 import React, { Component } from 'react';
-import CircularSlider from 'react-circular-slider-bar';
 import $ from 'jquery';
-import Slider from 'react-rangeslider';
-// import 'react-rangeslider/lib/index.css';
+window.jQuery = window.$ = $;
+
+require('../../public/roundSlider');
 
 
 export default class Display extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      switch: false,
+
     };
+
+    this.getBrightness = this.getBrightness.bind(this);
   }
 
   componentDidMount() {
     this.setState({ brightness: this.props.room.brightness });
+    this.getBrightness();
   }
+
+  componentDidUpdate(prevProps) {
+    if (!prevProps.room.id !== this.props.room.id) {
+      this.getBrightness();
+    }
+  }
+
+  getBrightness() {
+    $('#slider').roundSlider({
+      sliderType: 'min-range',
+      editableTooltip: false,
+      radius: 120,
+      value: this.props.room.brightness,
+      circleShape: 'pie',
+      startAngle: 315,
+      width: 10,
+      handleSize: '+8',
+      showTooltip: true,
+      disabled: !this.props.room.active,
+      drag: args => this.props.lightControl(args.value),
+      tooltipFormat: this.changeTooltip,
+    });
+  }
+
+  changeTooltip(e) {
+    const val = e.value;
+    return `<div style="color:#e1c739"><i class="far fa-sun"></i></div>
+              <div><span style="font-size:30px">${val}</span><span>%</span></div>
+            <div style="font-size:14px">Brightness</div>`;
+  }
+
+  // componentWillUnmount() {
+  //   this.$el.somePlugin('destroy');
+  // }
 
 
   // change color gradient by sliding
@@ -24,35 +61,10 @@ export default class Display extends Component {
   }
 
   render() {
-
-    const { room, lightControl } = this.props;
-
     return (
-      <div>
-         <div className="room-brightness" >
-           <div>
-             <span className="brightness">{this.props.room.brightness}</span>
-             <span className="percent">%</span>
-          </div>
-           <div className="text-brightness">Brightness</div>
-         </div>
-        <div id="slider">
-          {/* <CircularSlider
-            r={100}
-            trackColor={'grey'}
-            arcColor={'#7985f1'}
-            trackWidth={15}
-            thumbWidth={15}
-            onChange={value => this.props.lightControl(value) }
-          />  */}
-          <Slider
-            min={0}
-            max={100}
-            value={room.brightness}
-            onChange={value => (room.active ? lightControl(value) : null)}
-          />
+        <div>
+          <div id="slider" />
         </div>
-      </div>
     );
   }
 }

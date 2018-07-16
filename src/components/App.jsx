@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+// import { library } from '@fortawesome/fontawesome-svg-core';
 import Nav from './Nav.jsx';
 import Control from './Control.jsx';
 import Display from './Display.jsx';
 import Menu from './Menu.jsx';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faStroopwafel } from '@fortawesome/free-solid-svg-icons';
 
 
 export default class App extends Component {
@@ -27,7 +30,7 @@ export default class App extends Component {
   // Get room data from Light API
   getRoomInfo() {
     fetch('http://localhost:3000/api/v1/device')
-      .then((response) => response.json())
+      .then(response => response.json())
       .then((data) => {
         this.setState({ data });
       })
@@ -63,12 +66,8 @@ export default class App extends Component {
 
     return (
       <div className="container">
-        <div className="nav">
-          <Nav />
-        </div>
-        <div className="menu">
-          <Menu />
-        </div>
+        <Nav />
+        <Menu room={currentRoom} />
         <div className="main">
           <div className="control">
             <Control roomData={data} selectRoom={this.selectRoom} getSwitchStatus={this.getSwitchStatus} />

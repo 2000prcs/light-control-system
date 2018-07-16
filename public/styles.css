@@ -1,15 +1,37 @@
 .nav {
-  background-color: black;
-  color: white; }
+  background-color: #413d3d;
+  color: white;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 15px;
+  padding-left: 15px; }
 
-.menu {
-  background-color: #2b2b27; }
+.user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; }
+
+.llOjia {
+  margin: 0 !important; }
+
+.fa-angle-left {
+  margin-right: 10px; }
+
+.lighting {
+  font-size: 20px; }
+
+.fa-lightbulb {
+  margin: 10px; }
 
 .control {
   width: 100vw; }
 
 .display {
-  background-color: #2b2727;
+  background-color: #413d3d;
   color: white;
   width: 60vw;
   display: flex;
@@ -25,14 +47,26 @@
   margin-bottom: 50px; }
 
 .brightness {
-  font-size: 60px; }
+  font-size: 30px !important; }
 
 .percent {
   font-size: 40px; }
 
+.rs-control .rs-range-color {
+  background-color: #e1c739; }
+
+.rs-control .rs-path-color {
+  background-color: #a8a7a7; }
+
+.rs-control .rs-handle {
+  background-color: #e1c739; }
+
+.rs-control .rs-bg-color {
+  background-color: #413d3d; }
+
 body {
-  font-size: 20px;
-  font-family: Roboto, Arial, sans-serif; }
+  font-size: 15px;
+  font-family: "Roboto", "Arial", sans-serif; }
 
 .main {
   display: flex; }

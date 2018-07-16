@@ -4,10 +4,10 @@
 @import 'Display';
 // @import '../../node_modules/react-toggle-switch/dist/css/switch.min.css';
 
-$font-stack: Roboto,Arial,sans-serif;
+$font-stack: 'Roboto', 'Arial', sans-serif;
 
 body {
-  font-size: 20px;
+  font-size: 15px;
   font-family: $font-stack;
 }
 
