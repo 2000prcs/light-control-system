@@ -7,7 +7,6 @@ export default class Control extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentRoom: '',
     };
   }
 
@@ -55,13 +54,15 @@ export default class Control extends Component {
       },
     ];
 
+    const { roomData, selectRoom } = this.props;
+
     return (
       <Provider>
         <Table
           columns={columns}
-          data={this.props.roomData.data}
-          rowKey={this.props.roomData.id}
-          onRowClick={(rowKey)=> this.props.selectRoom(rowKey)}
+          data={roomData.data}
+          rowKey={roomData.id}
+          onRowClick={rowKey => selectRoom(rowKey)}
         />
       </Provider>
     );

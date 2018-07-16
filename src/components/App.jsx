@@ -15,6 +15,7 @@ export default class App extends Component {
 
     this.getRoomInfo = this.getRoomInfo.bind(this);
     this.selectRoom = this.selectRoom.bind(this);
+    this.lightControl = this.lightControl.bind(this);
   }
 
   // Send GET request to server when the component is mounted
@@ -26,11 +27,9 @@ export default class App extends Component {
   getRoomInfo() {
     fetch('http://localhost:3000/api/v1/device')
       .then((response) => {
-        console.log('Data received');
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         this.setState({ data });
       })
       .catch(errors => console.error(errors));
@@ -38,12 +37,19 @@ export default class App extends Component {
 
   // Hightlight the room and displays its controller when user selects the room
   selectRoom(info) {
-    console.log(info);
     this.setState({ currentRoom: info });
   }
 
+  // Change brightness value dynamically
+  lightControl(value) {
+    let room = this.state.currentRoom;
+    room.brightness = Math.ceil(value);
+    this.setState({ currentRoom: room });
+  }
 
   render() {
+    const { data, currentRoom } = this.state;
+
     return (
       <div className="container">
         <div className="nav">
@@ -54,10 +60,10 @@ export default class App extends Component {
         </div>
         <div className="main">
           <div className="control">
-            <Control roomData={this.state.data} selectRoom={this.selectRoom} />
+            <Control roomData={data} selectRoom={this.selectRoom} />
           </div>
           <div className="display">
-            <Display room={this.state.currentRoom} />
+            <Display room={currentRoom} lightControl={this.lightControl} />
           </div>
         </div>
       </div>

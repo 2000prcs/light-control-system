@@ -11,7 +11,10 @@
   "author": "Moyeong Lee",
   "license": "ISC",
   "dependencies": {
+    "@mougli/circular-slider": "^1.0.0",
+    "jquery": "^3.3.1",
     "react": "^16.4.1",
+    "react-circular-slider-bar": "^1.2.0",
     "react-dom": "^16.4.1",
     "react-toggle-switch": "^3.0.4",
     "rendition": "^4.18.1"
