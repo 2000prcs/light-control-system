@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Provider } from 'rendition';
 
-
-
 export default class Display extends Component {
   constructor(props) {
     super(props);
@@ -21,12 +19,9 @@ export default class Display extends Component {
           <i className="fas fa-angle-left"></i>
           <span>Back</span>
         </Button>
-        <span>
-          <i class="far fa-lightbulb"></i>
-          Lighting
-        </span>
-        <span>
-          {this.props.room.name}
+        <span className="lighting">
+          <i className="far fa-lightbulb"></i>
+          <span>Lighting</span>
         </span>
       </div>
     );

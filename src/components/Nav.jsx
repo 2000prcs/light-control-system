@@ -27,7 +27,7 @@ export default class Nav extends Component {
   }
 
   getTime() {
-    const time = `${new Date().toLocaleString().slice(11, 16)} ${new Date().toLocaleString().slice(20)}`;
+    const time = `${new Date().toLocaleString().slice(11, 15)} ${new Date().toLocaleString().slice(19)}`;
     return time;
   }
 
