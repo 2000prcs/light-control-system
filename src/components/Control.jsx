@@ -7,7 +7,6 @@ export default class Control extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentRoom: '',
     };
   }
 
@@ -17,14 +16,20 @@ export default class Control extends Component {
       if (e.target.className.indexOf('on') !== -1) {
         e.target.classList.remove('on');
         e.target.nextElementSibling.innerText = 'Off';
+        this.props.getSwitchStatus(false);
       } else {
         e.target.classList.add('on');
         e.target.nextElementSibling.innerText = 'On';
+        this.props.getSwitchStatus(true);
       }
     }
   }
 
   render() {
+
+    const { roomData, selectRoom } = this.props;
+
+
     const columns = [
       {
         field: 'name',
@@ -55,13 +60,14 @@ export default class Control extends Component {
       },
     ];
 
+
     return (
       <Provider>
         <Table
           columns={columns}
-          data={this.props.roomData.data}
-          rowKey={this.props.roomData.id}
-          onRowClick={(rowKey)=> this.props.selectRoom(rowKey)}
+          data={roomData.data}
+          rowKey={roomData.id}
+          onRowClick={rowKey => selectRoom(rowKey)}
         />
       </Provider>
     );

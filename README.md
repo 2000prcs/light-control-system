@@ -13,7 +13,8 @@
 ## Building Process
 1. Rendered room data from [Light API](https://github.com/resin-io/light-api).
 2. Took advantage of [Redintion Library](https://github.com/resin-io-modules/rendition).
-3. 
+3. Toggle switch library
+4. JQuery roundSlider plugin (better user exprience) -> React circular slider bar library (code cleaness) -> React range slider library
 
 
 ## Prerequisites

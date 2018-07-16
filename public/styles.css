@@ -1,21 +1,34 @@
 .nav {
-  border: 1px solid black;
   background-color: black;
   color: white; }
 
 .menu {
-  border: 1px solid black;
   background-color: #2b2b27; }
 
 .control {
-  border: 1px solid black;
   width: 100vw; }
 
 .display {
-  border: 1px solid black;
   background-color: #2b2727;
   color: white;
-  width: 60vw; }
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.room-brightness {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px; }
+
+.brightness {
+  font-size: 60px; }
+
+.percent {
+  font-size: 40px; }
 
 body {
   font-size: 20px;

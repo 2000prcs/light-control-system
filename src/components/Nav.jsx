@@ -8,8 +8,16 @@ export default class Nav extends Component {
 
   render() {
     return (
-      <div>
-        Nav
+      <div className="nav">
+        <div>
+          Date
+        </div>
+        <div>
+          Time
+        </div>
+        <div>
+          Name
+        </div>
       </div>
     );
   }
