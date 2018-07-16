@@ -56,7 +56,7 @@ export default class Control extends Component {
         field: 'brightness',
         label: 'Brightness',
         sortable: false,
-        render: value => (<code>{value}%</code>),
+        render: value => <span>{value}%</span>,
       },
     ];
 

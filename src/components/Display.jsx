@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-// import CircularSlider from 'react-circular-slider-bar';
 import $ from 'jquery';
-import Slider from 'react-rangeslider';
-import 'npm-round-slider';
 window.jQuery = window.$ = $;
+
 require('../../public/roundSlider');
-// import { CircularSlider } from 'circular-slider';
 
 
 export default class Display extends Component {
@@ -41,14 +38,16 @@ export default class Display extends Component {
       handleSize: '+8',
       showTooltip: true,
       disabled: !this.props.room.active,
-      drag: (args) => this.props.lightControl(args.value),
+      drag: args => this.props.lightControl(args.value),
       tooltipFormat: this.changeTooltip,
     });
   }
 
   changeTooltip(e) {
-    let val = e.value;
-    return `<span style="font-size:30px">${val}</span>% <div style="font-size:14px">Brightness</div>`;
+    const val = e.value;
+    return `<div style="color:#e1c739"><i class="far fa-sun"></i></div>
+              <div><span style="font-size:30px">${val}</span><span>%</span></div>
+            <div style="font-size:14px">Brightness</div>`;
   }
 
   // componentWillUnmount() {
@@ -62,27 +61,10 @@ export default class Display extends Component {
   }
 
   render() {
-    const { room, lightControl } = this.props;
-
     return (
-      <div>
-        <div id="slider">
-          {/* <CircularSlider
-            r={100}
-            trackColor={'grey'}
-            arcColor={'#7985f1'}
-            trackWidth={15}
-            thumbWidth={15}
-            onChange={value => this.props.lightControl(value) }
-          />  */}
-          {/* <Slider
-            min={0}
-            max={100}
-            value={room.brightness}
-            onChange={value => (room.active ? lightControl(value) : null)}
-          /> */}
+        <div>
+          <div id="slider" />
         </div>
-      </div>
     );
   }
 }
