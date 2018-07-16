@@ -11,7 +11,6 @@ export default class App extends Component {
     this.state = {
       data: [],
       currentRoom: {},
-      currentRoomSwitchStatus: false,
     };
 
     this.getRoomInfo = this.getRoomInfo.bind(this);
@@ -28,9 +27,7 @@ export default class App extends Component {
   // Get room data from Light API
   getRoomInfo() {
     fetch('http://localhost:3000/api/v1/device')
-      .then((response) => {
-        return response.json();
-      })
+      .then((response) => response.json())
       .then((data) => {
         this.setState({ data });
       })
@@ -44,21 +41,19 @@ export default class App extends Component {
 
   // Change brightness value dynamically
   lightControl(value) {
-    let room = this.state.currentRoom;
+    const room = this.state.currentRoom;
     room.brightness = Math.ceil(value);
     this.setState({ currentRoom: room });
   }
 
   // Check if light switch is on or off
-  getSwitchStatus(value){
-    let room = this.state.currentRoom;
+  getSwitchStatus(value) {
+    const room = this.state.currentRoom;
     room.active = value;
-    if(value){
+    if (value) {
       this.setState({ currentRoom: room });
     } else {
       room.brightness = 0;
-      let bgcolor = document.getElementsByClassName('rangeslider__fill')[0];
-      // bgcolor.style.backgroundColor = 'grey';
       this.setState({ currentRoom: room });
     }
   }

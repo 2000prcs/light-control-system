@@ -29,9 +29,12 @@ export default class Display extends Component {
 
     return (
       <div>
-        <div>
-           <div>{this.props.room.brightness}%</div>
-           <div>Brightness</div>
+         <div className="room-brightness" >
+           <div>
+             <span className="brightness">{this.props.room.brightness}</span>
+             <span className="percent">%</span>
+          </div>
+           <div className="text-brightness">Brightness</div>
          </div>
         <div id="slider">
           {/* <CircularSlider
@@ -49,7 +52,6 @@ export default class Display extends Component {
             onChange={value => (room.active ? lightControl(value) : null)}
           />
         </div>
-
       </div>
     );
   }

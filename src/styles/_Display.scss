@@ -1,9 +1,7 @@
-$border: 1px solid black;
 $background-color: rgb(43, 39, 39);
 $color: white;
 
 .display {
-  border: $border;
   background-color: $background-color;
   color: $color;
   width: 60vw;
@@ -13,15 +11,20 @@ $color: white;
   align-items: center;
 }
 
-// .rs-control .rs-range-color {
-//   background-color: #afb22c;
-// }
-// .rs-control .rs-path-color {
-//   background-color: #888777;
-// }
-// .rs-control .rs-handle {
-//   background-color: #838383;
-// }
-// .rs-control .rs-bg-color {  
-//   background-color: $background-color;
-// }
+.room-brightness {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.brightness {
+  font-size: 60px;
+}
+
+.percent {
+  font-size: 40px;
+}
+
+
