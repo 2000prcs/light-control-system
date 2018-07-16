@@ -4,4 +4,10 @@ $color: white;
 .nav {
   background-color: $background-color;
   color: $color;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
 }

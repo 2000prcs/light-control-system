@@ -1,4 +1,4 @@
-$background-color: rgb(43, 39, 39);
+$background-color: #413d3d;
 $color: white;
 
 .display {
@@ -20,7 +20,7 @@ $color: white;
 }
 
 .brightness {
-  font-size: 60px;
+  font-size: 30px !important;
 }
 
 .percent {
@@ -28,3 +28,16 @@ $color: white;
 }
 
 
+
+.rs-control .rs-range-color {
+  background-color: #e1c739;
+}
+.rs-control .rs-path-color {
+  background-color: #a8a7a7;
+}
+.rs-control .rs-handle {
+  background-color: #e1c739;
+}
+.rs-control .rs-bg-color {
+  background-color: #413d3d;
+}

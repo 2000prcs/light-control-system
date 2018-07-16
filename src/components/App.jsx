@@ -63,12 +63,8 @@ export default class App extends Component {
 
     return (
       <div className="container">
-        <div className="nav">
-          <Nav />
-        </div>
-        <div className="menu">
-          <Menu />
-        </div>
+        <Nav />
+        <Menu />
         <div className="main">
           <div className="control">
             <Control roomData={data} selectRoom={this.selectRoom} getSwitchStatus={this.getSwitchStatus} />
