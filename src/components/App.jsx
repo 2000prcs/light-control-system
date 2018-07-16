@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { library } from '@fortawesome/fontawesome-svg-core';
+// import { library } from '@fortawesome/fontawesome-svg-core';
 import Nav from './Nav.jsx';
 import Control from './Control.jsx';
 import Display from './Display.jsx';
 import Menu from './Menu.jsx';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStroopwafel } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faStroopwafel } from '@fortawesome/free-solid-svg-icons';
 
 
 export default class App extends Component {
@@ -64,12 +64,10 @@ export default class App extends Component {
   render() {
     const { data, currentRoom } = this.state;
 
-    library.add(faStroopwafel);
-
     return (
       <div className="container">
         <Nav />
-        <Menu />
+        <Menu room={currentRoom} />
         <div className="main">
           <div className="control">
             <Control roomData={data} selectRoom={this.selectRoom} getSwitchStatus={this.getSwitchStatus} />

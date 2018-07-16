@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const moment = require('moment');
+// const moment = require('moment');
 
 export default class Nav extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ export default class Nav extends Component {
     this.setState({ time: this.getTime() });
     this.setState({ date: this.getDate() });
   	setInterval(() => {
-    	this.setState({ time: this.getTime() });
+      this.setState({ time: this.getTime() });
     }, 60000);
   }
 
@@ -53,7 +53,7 @@ export default class Nav extends Component {
             </svg>
           </div>
           <div>
-            <i class="fas fa-sort-down"></i>
+            <i className="fas fa-sort-down"></i>
           </div>
         </div>
       </div>
