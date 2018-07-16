@@ -11,11 +11,13 @@ export default class App extends Component {
     this.state = {
       data: [],
       currentRoom: {},
+      currentRoomSwitchStatus: false,
     };
 
     this.getRoomInfo = this.getRoomInfo.bind(this);
     this.selectRoom = this.selectRoom.bind(this);
     this.lightControl = this.lightControl.bind(this);
+    this.getSwitchStatus = this.getSwitchStatus.bind(this);
   }
 
   // Send GET request to server when the component is mounted
@@ -47,6 +49,20 @@ export default class App extends Component {
     this.setState({ currentRoom: room });
   }
 
+  // Check if light switch is on or off
+  getSwitchStatus(value){
+    let room = this.state.currentRoom;
+    room.active = value;
+    if(value){
+      this.setState({ currentRoom: room });
+    } else {
+      room.brightness = 0;
+      let bgcolor = document.getElementsByClassName('rangeslider__fill')[0];
+      // bgcolor.style.backgroundColor = 'grey';
+      this.setState({ currentRoom: room });
+    }
+  }
+
   render() {
     const { data, currentRoom } = this.state;
 
@@ -60,7 +76,7 @@ export default class App extends Component {
         </div>
         <div className="main">
           <div className="control">
-            <Control roomData={data} selectRoom={this.selectRoom} />
+            <Control roomData={data} selectRoom={this.selectRoom} getSwitchStatus={this.getSwitchStatus} />
           </div>
           <div className="display">
             <Display room={currentRoom} lightControl={this.lightControl} />

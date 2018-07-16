@@ -16,14 +16,20 @@ export default class Control extends Component {
       if (e.target.className.indexOf('on') !== -1) {
         e.target.classList.remove('on');
         e.target.nextElementSibling.innerText = 'Off';
+        this.props.getSwitchStatus(false);
       } else {
         e.target.classList.add('on');
         e.target.nextElementSibling.innerText = 'On';
+        this.props.getSwitchStatus(true);
       }
     }
   }
 
   render() {
+
+    const { roomData, selectRoom } = this.props;
+
+
     const columns = [
       {
         field: 'name',
@@ -54,7 +60,6 @@ export default class Control extends Component {
       },
     ];
 
-    const { roomData, selectRoom } = this.props;
 
     return (
       <Provider>
