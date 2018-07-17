@@ -12,15 +12,15 @@ export default class Display extends Component {
   render() {
     return (
       <div className="menu">
-        <Button m={2} tertiary square >
-          <i className="fas fa-home"></i>
+        <Button m={2} tertiary square>
+          <i className="fas fa-home" />
         </Button>
-        <Button w={80} m={2} tertiary >
-          <i className="fas fa-angle-left"></i>
+        <Button w={80} m={2} tertiary>
+          <i className="fas fa-angle-left" />
           <span>Back</span>
         </Button>
         <span className="lighting">
-          <i className="far fa-lightbulb"></i>
+          <i className="far fa-lightbulb" />
           <span>Lighting</span>
         </span>
       </div>

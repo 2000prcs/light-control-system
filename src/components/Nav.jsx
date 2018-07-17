@@ -16,7 +16,7 @@ export default class Nav extends Component {
   componentDidMount() {
     this.setState({ time: this.getTime() });
     this.setState({ date: this.getDate() });
-  	setInterval(() => {
+    setInterval(() => {
       this.setState({ time: this.getTime() });
     }, 60000);
   }
@@ -46,14 +46,16 @@ export default class Nav extends Component {
             {this.state.username}
           </div>
           <div>
-            <svg width="50" height="50" >
-                  <circle cx="25" cy="25" r="15" fill="#aeaeae" />
-                  <text x="50%" y="50%" textAnchor="middle" fill="white" fontSize="15px" fontFamily="Arial" dy=".3em">{this.state.initial}</text>
+            <svg width="50" height="50">
+              <circle cx="25" cy="25" r="15" fill="#aeaeae" />
+              <text x="50%" y="50%" textAnchor="middle" fill="white" fontSize="15px" fontFamily="Arial" dy=".3em">
+{this.state.initial}
+</text>
                   Sorry, your browser does not support inline SVG.
             </svg>
           </div>
           <div>
-            <i className="fas fa-sort-down"></i>
+            <i className="fas fa-sort-down" />
           </div>
         </div>
       </div>

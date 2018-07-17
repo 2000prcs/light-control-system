@@ -11,13 +11,17 @@ export default class Control extends Component {
     };
   }
 
-  // Highlight the selected room 
+  // Highlight the selected room
+  // Note: There is no class/id selector for each table row so walking DOM elements to get all table rows
   selectRoom(roomInfo, e) {
-    let talbeRows = e.target.parentNode.parentNode.childNodes;
-    Array.from(talbeRows).forEach(row => row.classList.remove('highlight'));
     let currentTableRow = e.target.parentNode;
+    if (currentTableRow.dataset.display === 'table-cell') {
+      currentTableRow = currentTableRow.parentNode;
+    }
+    const talbeRows = currentTableRow.parentNode.childNodes;
+    Array.from(talbeRows).forEach(row => row.classList.remove('highlight'));
     currentTableRow.classList.add('highlight');
-
+    
     this.props.getCurrentRoom(roomInfo);
     this.setState({ currentRoom: roomInfo });
   }
@@ -50,7 +54,11 @@ export default class Control extends Component {
         field: 'name',
         label: 'Room',
         sortable: true,
-        render: value => <b>{value}</b>,
+        render: value => (
+<b>
+{value}
+</b>
+),
       },
       {
         field: 'active',
@@ -75,7 +83,12 @@ export default class Control extends Component {
         field: 'brightness',
         label: 'Brightness',
         sortable: false,
-        render: value => <span>{value}%</span>,
+        render: value => (
+<span>
+{value}
+%
+</span>
+),
       },
     ];
 
