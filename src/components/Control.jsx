@@ -2,13 +2,26 @@ import React, { Component } from 'react';
 import { Table, Provider } from 'rendition';
 import Switch from 'react-toggle-switch';
 
-
 export default class Control extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      switched: '',
+      currentRoom: '',
     };
   }
+
+  // Highlight the selected room 
+  selectRoom(roomInfo, e) {
+    let talbeRows = e.target.parentNode.parentNode.childNodes;
+    Array.from(talbeRows).forEach(row => row.classList.remove('highlight'));
+    let currentTableRow = e.target.parentNode;
+    currentTableRow.classList.add('highlight');
+
+    this.props.getCurrentRoom(roomInfo);
+    this.setState({ currentRoom: roomInfo });
+  }
+
 
   // Toggle light switch
   toggleSwitch(e) {
@@ -16,25 +29,28 @@ export default class Control extends Component {
       if (e.target.className.indexOf('on') !== -1) {
         e.target.classList.remove('on');
         e.target.nextElementSibling.innerText = 'Off';
-        this.props.getSwitchStatus(false);
+        this.setState({ switched: false }, () => {
+          this.props.getSwitchStatus(false);
+        });
       } else {
         e.target.classList.add('on');
         e.target.nextElementSibling.innerText = 'On';
-        this.props.getSwitchStatus(true);
+        this.setState({ switched: true }, () => {
+          this.props.getSwitchStatus(true);
+        });
       }
     }
   }
 
   render() {
-
-    const { roomData, selectRoom } = this.props;
-
+    const { room } = this.props;
 
     const columns = [
       {
         field: 'name',
         label: 'Room',
         sortable: true,
+        render: value => <b>{value}</b>,
       },
       {
         field: 'active',
@@ -43,12 +59,15 @@ export default class Control extends Component {
         render: (value) => {
           const active = value ? 'On' : 'Off';
           return (
-            <span>
-              <Switch onClick={e => this.toggleSwitch(e)} on={value} />
-              <span>
+            <div className="toggle-switch">
+              <Switch
+                onClick={e => this.toggleSwitch(e)}
+                on={value}
+              />
+              <div className="active">
                 {active}
-              </span>
-            </span>
+              </div>
+            </div>
           );
         },
       },
@@ -65,9 +84,9 @@ export default class Control extends Component {
       <Provider>
         <Table
           columns={columns}
-          data={roomData.data}
-          rowKey={roomData.id}
-          onRowClick={rowKey => selectRoom(rowKey)}
+          data={room}
+          rowKey={room.id}
+          onRowClick={(data, e) => this.selectRoom(data, e)}
         />
       </Provider>
     );

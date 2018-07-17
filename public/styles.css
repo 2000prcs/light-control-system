@@ -30,6 +30,16 @@
 .control {
   width: 100vw; }
 
+.toggle-switch {
+  display: flex;
+  align-items: center; }
+
+.active {
+  margin-left: 15px; }
+
+.highlight {
+  background-color: #E9F4FB !important; }
+
 .display {
   background-color: #413d3d;
   color: white;

@@ -17,7 +17,7 @@ export default class App extends Component {
     };
 
     this.getRoomInfo = this.getRoomInfo.bind(this);
-    this.selectRoom = this.selectRoom.bind(this);
+    this.getCurrentRoom = this.getCurrentRoom.bind(this);
     this.lightControl = this.lightControl.bind(this);
     this.getSwitchStatus = this.getSwitchStatus.bind(this);
   }
@@ -31,14 +31,14 @@ export default class App extends Component {
   getRoomInfo() {
     fetch('http://localhost:3000/api/v1/device')
       .then(response => response.json())
-      .then((data) => {
-        this.setState({ data });
+      .then((result) => {
+        this.setState({ data: result.data });
       })
       .catch(errors => console.error(errors));
   }
 
   // Hightlight the room and displays its controller when user selects the room
-  selectRoom(info) {
+  getCurrentRoom(info) {
     this.setState({ currentRoom: info });
   }
 
@@ -70,7 +70,7 @@ export default class App extends Component {
         <Menu room={currentRoom} />
         <div className="main">
           <div className="control">
-            <Control roomData={data} selectRoom={this.selectRoom} getSwitchStatus={this.getSwitchStatus} />
+            <Control room={data} getCurrentRoom={this.getCurrentRoom} getSwitchStatus={this.getSwitchStatus} />
           </div>
           <div className="display">
             <Display room={currentRoom} lightControl={this.lightControl} />

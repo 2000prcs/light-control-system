@@ -1,4 +1,22 @@
 
+
 .control {
   width: 100vw; 
+}
+
+// Light switch
+.toggle-switch {
+  display: flex;
+  align-items: center;
+}
+
+.active {
+  margin-left: 15px;
+}
+
+
+// Highlighting selected room
+
+.highlight {
+  background-color: #E9F4FB !important;
 }
