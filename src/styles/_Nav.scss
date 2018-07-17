@@ -1,21 +1,31 @@
-$background-color: #413d3d;
-$color: white;
 
 .nav {
-  background-color: $background-color;
-  color: $color;
-  height: 50px;
+  background-color: #222222;
+  color: white;
+  height: 54px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-right: 15px;
+  padding-right: 0;
   padding-left: 15px;
 }
+
+// Username
 
 .user {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  border-left: solid 1px grey;
+  width: 200px;
+}
+
+
+// Icon
+
+.fa-sort-down {
+  cursor: pointer;
+  margin-bottom: 5px;
 }

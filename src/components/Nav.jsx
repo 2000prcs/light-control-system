@@ -47,7 +47,7 @@ export default class Nav extends Component {
           </div>
           <div>
             <svg width="50" height="50">
-              <circle cx="25" cy="25" r="15" fill="#aeaeae" />
+              <circle cx="25" cy="25" r="15" fill="#484848" />
               <text x="50%" y="50%" textAnchor="middle" fill="white" fontSize="15px" fontFamily="Arial" dy=".3em">
 {this.state.initial}
 </text>

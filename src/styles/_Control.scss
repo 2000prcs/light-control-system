@@ -2,6 +2,8 @@
 
 .control {
   width: 100vw; 
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 // Light switch
@@ -14,9 +16,16 @@
   margin-left: 15px;
 }
 
+.switch.on {
+  background: #4DB312 !important;
+} 
+
 
 // Highlighting selected room
 
 .highlight {
   background-color: #E9F4FB !important;
+  -webkit-box-shadow:inset 0px 0px 0px 10px #0094E4;
+  -moz-box-shadow:inset 0px 0px 0px 10px #0094E4;
+  box-shadow:inset 3px 0px 0px 0px  #0094E4;
 }

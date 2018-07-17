@@ -15,13 +15,29 @@ export default class Control extends Component {
   // Note: There is no class/id selector for each table row so walking DOM elements to get all table rows
   selectRoom(roomInfo, e) {
     let currentTableRow = e.target.parentNode;
+    
+    // switch (currentTableRow) {
+    //   case currentTableRow.dataset.display === 'table-cell':
+    //     currentTableRow = currentTableRow.parentNode;
+    //     break;
+    //   case currentTableRow.className.indexOf('toggle') !== -1:
+    //     currentTableRow = currentTableRow.parentNode.parentNode;
+    //     break;
+    //   default:
+    //     break;
+    // }
+
     if (currentTableRow.dataset.display === 'table-cell') {
       currentTableRow = currentTableRow.parentNode;
     }
-    const talbeRows = currentTableRow.parentNode.childNodes;
+    if (currentTableRow.className.indexOf('toggle') !== -1) {
+      currentTableRow = currentTableRow.parentNode.parentNode;
+    }
+    const talbeRows = document.getElementsByClassName('highlight');
+
     Array.from(talbeRows).forEach(row => row.classList.remove('highlight'));
     currentTableRow.classList.add('highlight');
-    
+
     this.props.getCurrentRoom(roomInfo);
     this.setState({ currentRoom: roomInfo });
   }

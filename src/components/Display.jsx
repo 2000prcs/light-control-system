@@ -35,7 +35,7 @@ export default class Display extends Component {
       circleShape: 'pie',
       startAngle: 315,
       width: 10,
-      handleSize: '+8',
+      handleSize: '+12',
       showTooltip: true,
       disabled: !this.props.room.active,
       drag: args => this.props.lightControl(args.value),
@@ -45,8 +45,10 @@ export default class Display extends Component {
 
   changeTooltip(e) {
     const val = e.value;
-    return `<div style="color:#e1c739"><i class="far fa-sun"></i></div>
-              <div><span style="font-size:30px">${val}</span><span>%</span></div>
+    return `<div style="color:#FEC400;margin-right:10px"><i class="far fa-sun"></i></div>
+              <div style="margin-top:10px;margin-bottom:10px">
+                <span style="font-size:30px">${val}</span><span>%</span>
+              </div>
             <div style="font-size:14px">Brightness</div>`;
   }
 
