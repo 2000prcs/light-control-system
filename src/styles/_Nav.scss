@@ -1,4 +1,5 @@
 
+// Nav bar
 .nav {
   background-color: #222222;
   color: white;
@@ -11,8 +12,7 @@
   padding-left: 15px;
 }
 
-// Username
-
+// User Info Section
 .user {
   display: flex;
   flex-direction: row;
@@ -24,7 +24,6 @@
 
 
 // Icon
-
 .fa-sort-down {
   cursor: pointer;
   margin-bottom: 5px;

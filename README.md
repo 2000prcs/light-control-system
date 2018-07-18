@@ -14,8 +14,10 @@
 1. Rendered room data from [Light API](https://github.com/resin-io/light-api).
 2. Took advantage of [Redintion Library](https://github.com/resin-io-modules/rendition).
 3. Toggle switch library
-4. JQuery roundSlider plugin (better user exprience) -> React circular slider bar library (code cleaness) -> React range slider library
-
+4. React circular slider bar library -> React range slider library -> JQuery roundSlider plugin (better user exprience) 
+5. Highlighting selected room by walking DOM elements 
+6. Styled components to match the wireframe design
+7. To move arrow box with room selection, used pseudostyle 
 
 ## Prerequisites
 

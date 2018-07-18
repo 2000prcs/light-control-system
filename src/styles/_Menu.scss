@@ -1,6 +1,7 @@
 $background: #EBEEF3;
 $font-color: black;
 
+// Menu bar
 .menu {
   height: 80px;
 }
@@ -17,6 +18,8 @@ $font-color: black;
   color: $font-color !important;
 }
 
+
+
 // Icons
 .fa-angle-left {
   margin-right: 10px;
@@ -24,6 +27,8 @@ $font-color: black;
 .fa-lightbulb {
   margin: 10px;
 }
+
+
 
 // Lighting text
 .lighting {

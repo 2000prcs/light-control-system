@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-// import { library } from '@fortawesome/fontawesome-svg-core';
 import Nav from './Nav.jsx';
 import Control from './Control.jsx';
 import Display from './Display.jsx';
 import Menu from './Menu.jsx';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faStroopwafel } from '@fortawesome/free-solid-svg-icons';
 
 
 export default class App extends Component {
@@ -14,6 +11,9 @@ export default class App extends Component {
     this.state = {
       data: [],
       currentRoom: {},
+      userData: {
+        userName: 'Moyeong Lee',
+      },
     };
 
     this.getRoomInfo = this.getRoomInfo.bind(this);
@@ -63,11 +63,11 @@ export default class App extends Component {
   }
 
   render() {
-    const { data, currentRoom } = this.state;
+    const { data, currentRoom, userData } = this.state;
 
     return (
       <div className="container">
-        <Nav />
+        <Nav userData={userData} />
         <Menu room={currentRoom} />
         <div className="main">
           <div className="control">

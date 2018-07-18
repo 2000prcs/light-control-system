@@ -1,22 +1,19 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
-window.jQuery = window.$ = $;
 
-require('../../public/roundSlider');
+// Importing jQuery directly with window to use roundSlider jQuery plugin
+window.jQuery = window.$ = $;
+require('../../public/lib/roundSlider.min.js');
 
 
 export default class Display extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-
-    };
+    this.state = {};
 
     this.getBrightness = this.getBrightness.bind(this);
   }
 
   componentDidMount() {
-    this.setState({ brightness: this.props.room.brightness });
     this.getBrightness();
   }
 
@@ -26,6 +23,12 @@ export default class Display extends Component {
     }
   }
 
+  // Clean-up jQuery plugin
+  componentWillUnmount() {
+    $('#slider').roundSlider('destroy');
+  }
+
+  // Get roundSlider jQuery plugin
   getBrightness() {
     $('#slider').roundSlider({
       sliderType: 'min-range',
@@ -43,30 +46,21 @@ export default class Display extends Component {
     });
   }
 
+  // Dynamically changing brightness value
   changeTooltip(e) {
-    const val = e.value;
     return `<div style="color:#FEC400;margin-right:10px"><i class="far fa-sun"></i></div>
               <div style="margin-top:10px;margin-bottom:10px">
-                <span style="font-size:30px">${val}</span><span>%</span>
+                <span style="font-size:30px">${e.value}</span><span>%</span>
               </div>
             <div style="font-size:14px">Brightness</div>`;
   }
 
-  // componentWillUnmount() {
-  //   this.$el.somePlugin('destroy');
-  // }
-
-
-  // change color gradient by sliding
-  changeColor() {
-
-  }
 
   render() {
     return (
-        <div>
-          <div id="slider" />
-        </div>
+      <div className="arrow_box">
+        <div id="slider" />
+      </div>
     );
   }
 }

@@ -1,5 +1,6 @@
 $background-color: #3B3C41;
 
+// Display 
 .display {
   background-color: $background-color;
   color: white;
@@ -12,15 +13,7 @@ $background-color: #3B3C41;
 }
 
 
-// Text in the sliderbar
-
-.rs-tooltip-text {
-  margin-top: -60px !important;
-}
-
-
-// Round Sliderbar
-
+// Sliderbar
 .rs-control .rs-range-color {
   background: #FEC400; /* Old browsers */
   background: -moz-linear-gradient(left, #886604 40%, #FEC400 100%); /* FF3.6-15 */
@@ -36,4 +29,44 @@ $background-color: #3B3C41;
 }
 .rs-control .rs-bg-color {
   background-color: $background-color;
+}
+
+
+// Text in the sliderbar
+.rs-tooltip-text {
+  margin-top: -60px !important;
+}
+
+
+// Arrow box
+.arrow_box {
+	position: relative;
+	background: #3B3C41;
+  width: 40vw;
+  display: flex;
+  justify-content: center;
+}
+
+.arrow_box:after, .arrow_box:before {
+	right: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-color: rgba(59, 60, 65, 0);
+	border-right-color: #3B3C41;
+	border-width: 3px;
+	margin-top: -3px;
+}
+.arrow_box:before {
+	border-color: rgba(59, 60, 65, 0);
+	border-right-color: #3B3C41;
+	border-width: 9px;
+	margin-top: -9px;
 }
