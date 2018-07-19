@@ -1,6 +1,6 @@
 # Light Controlling System
 
-> This application is to control lightning for each room. User can controll the amount of light by using the sliderbar.
+> Web application for a home automation light control system.
 
 ## Table of Contents
 
@@ -9,15 +9,22 @@
 
 ## Demo
 
+👉 Watch Demo Video <a href="https://youtu.be/KEKBAi8L17Y">here</a>.
+<br>
+
 
 ## Building Process
-1. Rendered room data from [Light API](https://github.com/resin-io/light-api).
-2. Took advantage of [Redintion Library](https://github.com/resin-io-modules/rendition).
-3. Toggle switch library
-4. React circular slider bar library -> React range slider library -> JQuery roundSlider plugin (better user exprience) 
-5. Highlighting selected room by walking DOM elements 
-6. Styled components to match the wireframe design
-7. To move arrow box with room selection, used pseudostyle 
+1. Rendered room data with [Light API](https://github.com/resin-io/light-api).
+2. Created table with the room data using [Redintion Library](https://github.com/resin-io-modules/rendition).
+3. Rendered light switches and created toggleSwitch method with [react-toggle-switch library](https://github.com/pgrimard/react-toggle-switch).
+4. Looked into different libraries for rendering the round sliderbar for light controlling, and decided to go with [roundSlider jQuery plugin](https://github.com/soundar24/roundSlider). I made this decision in order to improve UI with a better user exprience. 
+Other libraries I considered: [React Circular Slider bar library](https://github.com/alexsyo/react-circular-slider-bar),  [React Range slider library](https://whoisandy.github.io/react-rangeslider)
+5. To highlight the room user selects, I added 'highlight' class to the selected table row.
+6. To make arrow from the Display point to the highlighted room, I used [pseudostyle library](http://mcgivery.com/htmlelement-pseudostyle-settingmodifying-before-and-after-in-javascript) to change 'top' style attribute dynamically.
+7. Used [HTML Color Codes](https://html-color-codes.info/colors-from-image) to match components colors with the wireframe design. 
+8. Added detailed styling to match with the wireframe design as much as I can.
+9. Achieved 85% unit testing coverage. The challenging part was testing Controller component by mocking events. 
+
 
 ## Prerequisites
 
