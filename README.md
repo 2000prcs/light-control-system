@@ -4,14 +4,13 @@
 
 ## Table of Contents
 
-1. [Installation](#installation)
-2. [Tests](#running-the-tests)
+1. [Usage](#Usage)
+2. [Testing](#Testing)
 
 ## Demo
 
 👉 Watch Demo Video <a href="https://youtu.be/KEKBAi8L17Y">here</a>.
 <br>
-
 
 ## Building Process
 1. Rendered room data with [Light API](https://github.com/resin-io/light-api).
@@ -22,8 +21,8 @@ Other libraries I considered: [React Circular Slider bar library](https://github
 5. To highlight the room user selects, I added 'highlight' class to the selected table row.
 6. To make arrow from the Display point to the highlighted room, I used [pseudostyle library](http://mcgivery.com/htmlelement-pseudostyle-settingmodifying-before-and-after-in-javascript) to change 'top' style attribute dynamically.
 7. Used [HTML Color Codes](https://html-color-codes.info/colors-from-image) to match components colors with the wireframe design. 
-8. Added detailed styling to match with the wireframe design as much as I can.
-9. Achieved 85% unit testing coverage. The challenging part was testing Controller component by mocking events. 
+8. Added detailed styling to match with the wireframe design.
+9. Achieved 85% unit testing coverage.
 
 
 ## Prerequisites
@@ -32,7 +31,7 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 - Node 6.13.0
 
-## Installation
+## Usage
 
 From within the root directory:
 
@@ -48,17 +47,20 @@ npm install
 npm run build (for development) 
 ```
 
-## Running the Tests
+## Testing
 
 ```sh
-npm run test
+npm test
 ```
 
 ## Built With
 
-* [React](https://reactjs.org/) - The web framework used
-* [NPM](https://www.npmjs.com/) - Dependency Management
-
+* [React](https://reactjs.org/) 
+* [NPM](https://www.npmjs.com/)
+* [Light API](https://github.com/resin-io/light-api)
+* [Redintion](https://github.com/resin-io-modules/rendition)
+* [React Toggle Switch](https://github.com/pgrimard/react-toggle-switch)
+* [RoundSlider](https://github.com/soundar24/roundSlider)
 
 ## Style Guide
 
