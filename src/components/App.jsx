@@ -48,16 +48,17 @@ export default class App extends Component {
   getSwitchStatus(value) {
     const room = this.state.currentRoom;
     room.active = value;
-    if (value) {
-      this.setState({ currentRoom: room });
-    } else {
+    if (!value) {
       room.brightness = 0;
-      this.setState({ currentRoom: room });
     }
+    this.setState({ currentRoom: room });
   }
 
   // Change brightness value dynamically
   lightControl(value) {
+    if (value === 0) {
+      this.getSwitchStatus(false);
+    }
     const room = this.state.currentRoom;
     room.brightness = Math.ceil(value);
     this.setState({ currentRoom: room });
