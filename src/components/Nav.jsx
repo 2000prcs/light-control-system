@@ -1,59 +1,62 @@
 import React, { Component } from 'react';
 
-// const moment = require('moment');
-
 export default class Nav extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: 'Sunday 15 July, 2018',
-      time: '8:13 PM',
-      username: 'Moyeong Lee',
-      initial: 'ML',
+      date: 'Tuesday 17 July, 2018',
+      time: '10:37 PM',
     };
   }
 
   componentDidMount() {
     this.setState({ time: this.getTime() });
     this.setState({ date: this.getDate() });
-  	setInterval(() => {
+    setInterval(() => {
       this.setState({ time: this.getTime() });
     }, 60000);
   }
 
+  // Get current date
   getDate() {
-    const date = new Date().toString().slice(0, 15);
-    return date;
+    return new Date().toString().slice(0, 15);
   }
 
+  // Get current time every minute
   getTime() {
-    const time = `${new Date().toLocaleString().slice(11, 15)} ${new Date().toLocaleString().slice(19)}`;
-    return time;
+    let time = new Date(parseInt(Date.now()));
+    let localeSpecificTime = time.toLocaleTimeString();
+    return localeSpecificTime.replace(/:\d+ /, ' ');
   }
 
 
   render() {
+    const { userData } = this.props;
+    const { date, time } = this.state;
+
     return (
       <div className="nav">
         <div>
-          {this.state.date}
+          {date}
         </div>
         <div>
-          {this.state.time}
+          {time}
         </div>
         <div className="user">
           <div>
-            {this.state.username}
+            {userData.userName}
           </div>
           <div>
-            <svg width="50" height="50" >
-                  <circle cx="25" cy="25" r="15" fill="#aeaeae" />
-                  <text x="50%" y="50%" textAnchor="middle" fill="white" fontSize="15px" fontFamily="Arial" dy=".3em">{this.state.initial}</text>
+            <svg width="50" height="50">
+              <circle cx="25" cy="25" r="15" fill="#484848" />
+              <text x="50%" y="50%" textAnchor="middle" fill="white" fontSize="15px" fontFamily="Arial" dy=".3em">
+                {userData.userName.split(' ')[0][0] + userData.userName.split(' ')[1][0]}
+              </text>
                   Sorry, your browser does not support inline SVG.
             </svg>
           </div>
           <div>
-            <i className="fas fa-sort-down"></i>
+            <i className="fas fa-sort-down" />
           </div>
         </div>
       </div>

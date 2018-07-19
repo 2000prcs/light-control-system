@@ -1,32 +1,39 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
-window.jQuery = window.$ = $;
 
-require('../../public/roundSlider');
+// Importing jQuery directly with window to use roundSlider jQuery plugin
+window.jQuery = window.$ = $;
+require('../../public/lib/roundSlider.min.js');
 
 
 export default class Display extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    };
-
-    this.getBrightness = this.getBrightness.bind(this);
-  }
-
   componentDidMount() {
-    this.setState({ brightness: this.props.room.brightness });
-    this.getBrightness();
+    this.renderSlider();
   }
 
+  // Re-render roundSlider when current room changes
   componentDidUpdate(prevProps) {
     if (!prevProps.room.id !== this.props.room.id) {
-      this.getBrightness();
+      this.renderSlider();
     }
   }
 
-  getBrightness() {
+  // Clean-up jQuery plugin when the component unmounts
+  componentWillUnmount() {
+    $('#slider').roundSlider('destroy');
+  }
+
+  // Dynamically changing brightness value
+  changeTooltip(e) {
+    return `<div style="color:#FEC400;margin-right:10px"><i class="far fa-sun"></i></div>
+    <div style="margin-top:10px;margin-bottom:10px">
+    <span style="font-size:30px">${e.value}</span><span>%</span>
+    </div>
+    <div style="font-size:14px">Brightness</div>`;
+  }
+  
+  // Render roundSlider jQuery plugin
+  renderSlider() {
     $('#slider').roundSlider({
       sliderType: 'min-range',
       editableTooltip: false,
@@ -35,7 +42,7 @@ export default class Display extends Component {
       circleShape: 'pie',
       startAngle: 315,
       width: 10,
-      handleSize: '+8',
+      handleSize: '+12',
       showTooltip: true,
       disabled: !this.props.room.active,
       drag: args => this.props.lightControl(args.value),
@@ -43,28 +50,11 @@ export default class Display extends Component {
     });
   }
 
-  changeTooltip(e) {
-    const val = e.value;
-    return `<div style="color:#e1c739"><i class="far fa-sun"></i></div>
-              <div><span style="font-size:30px">${val}</span><span>%</span></div>
-            <div style="font-size:14px">Brightness</div>`;
-  }
-
-  // componentWillUnmount() {
-  //   this.$el.somePlugin('destroy');
-  // }
-
-
-  // change color gradient by sliding
-  changeColor() {
-
-  }
-
   render() {
     return (
-        <div>
-          <div id="slider" />
-        </div>
+      <div className="arrow_box">
+        <div id="slider" />
+      </div>
     );
   }
 }

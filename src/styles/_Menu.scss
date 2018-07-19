@@ -1,19 +1,36 @@
-.menu {
+$background: #EBEEF3;
+$font-color: black;
 
+// Menu bar
+.menu {
+  height: 80px;
 }
 
+// Buttons
 .llOjia {
   margin: 0 !important;
+  background: $background !important;
+  color: $font-color !important;
 }
 
+.fXEkVV {
+  background: $background !important;
+  color: $font-color !important;
+}
+
+
+
+// Icons
 .fa-angle-left {
   margin-right: 10px;
 }
-
-.lighting {
-  font-size: 20px;
-}
-
 .fa-lightbulb {
   margin: 10px;
+}
+
+
+
+// Lighting text
+.lighting {
+  font-size: 20px;
 }

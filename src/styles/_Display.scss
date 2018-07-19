@@ -1,43 +1,76 @@
-$background-color: #413d3d;
-$color: white;
+$background-color: #3B3C41;
 
+// Display 
 .display {
   background-color: $background-color;
-  color: $color;
+  color: white;
   width: 60vw;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.room-brightness {
+
+// Sliderbar
+.rs-control {
+  .rs-range-color {
+    background: #FEC400; /* Old browsers */
+    background: -moz-linear-gradient(left, #886604 40%, #FEC400 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #886604 40%,#FEC400 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #886604 40%,#FEC400 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#886604', endColorstr='#FEC400',GradientType=1 ); /* IE6-9 */
+  }
+  .rs-path-color {
+    background-color: #a8a7a7;
+  }
+  .rs-handle {
+    background-color: #FEC400;
+  }
+  .rs-bg-color {
+    background-color: $background-color;
+  }
+}
+
+// Text in the sliderbar
+.rs-tooltip-text {
+  margin-top: -60px !important;
+}
+
+
+// Arrow box
+.arrow_box {
+	position: relative;
+	background: #3B3C41;
+  width: 40vw;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  margin-bottom: 50px;
 }
 
-.brightness {
-  font-size: 30px !important;
+.arrow_box:after, .arrow_box:before {
+	right: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
 }
 
-.percent {
-  font-size: 40px;
+%arrow_box-shared {
+  border-color: rgba(59, 60, 65, 0);
+	border-right-color: #3B3C41;
 }
 
-
-
-.rs-control .rs-range-color {
-  background-color: #e1c739;
+.arrow_box:after {
+  @extend %arrow_box-shared;
+	border-width: 3px;
+	margin-top: -3px;
 }
-.rs-control .rs-path-color {
-  background-color: #a8a7a7;
-}
-.rs-control .rs-handle {
-  background-color: #e1c739;
-}
-.rs-control .rs-bg-color {
-  background-color: #413d3d;
+.arrow_box:before {
+  @extend %arrow_box-shared;
+	border-width: 9px;
+	margin-top: -9px;
 }
