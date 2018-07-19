@@ -7,30 +7,33 @@ require('../../public/lib/roundSlider.min.js');
 
 
 export default class Display extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-
-    this.getBrightness = this.getBrightness.bind(this);
-  }
-
   componentDidMount() {
-    this.getBrightness();
+    this.renderSlider();
   }
 
+  // Re-render roundSlider when current room changes
   componentDidUpdate(prevProps) {
     if (!prevProps.room.id !== this.props.room.id) {
-      this.getBrightness();
+      this.renderSlider();
     }
   }
 
-  // Clean-up jQuery plugin
+  // Clean-up jQuery plugin when the component unmounts
   componentWillUnmount() {
     $('#slider').roundSlider('destroy');
   }
 
-  // Get roundSlider jQuery plugin
-  getBrightness() {
+  // Dynamically changing brightness value
+  changeTooltip(e) {
+    return `<div style="color:#FEC400;margin-right:10px"><i class="far fa-sun"></i></div>
+    <div style="margin-top:10px;margin-bottom:10px">
+    <span style="font-size:30px">${e.value}</span><span>%</span>
+    </div>
+    <div style="font-size:14px">Brightness</div>`;
+  }
+  
+  // Render roundSlider jQuery plugin
+  renderSlider() {
     $('#slider').roundSlider({
       sliderType: 'min-range',
       editableTooltip: false,
@@ -46,16 +49,6 @@ export default class Display extends Component {
       tooltipFormat: this.changeTooltip,
     });
   }
-
-  // Dynamically changing brightness value
-  changeTooltip(e) {
-    return `<div style="color:#FEC400;margin-right:10px"><i class="far fa-sun"></i></div>
-              <div style="margin-top:10px;margin-bottom:10px">
-                <span style="font-size:30px">${e.value}</span><span>%</span>
-              </div>
-            <div style="font-size:14px">Brightness</div>`;
-  }
-
 
   render() {
     return (

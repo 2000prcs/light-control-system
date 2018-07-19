@@ -4,12 +4,14 @@ import Control from './Control.jsx';
 import Display from './Display.jsx';
 import Menu from './Menu.jsx';
 
+// Sample data for testing without Light API
+import { sampleData } from '../../public/lib/sampleData.js';
 
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
+      data: sampleData,
       currentRoom: {},
       userData: {
         userName: 'Moyeong Lee',
@@ -27,7 +29,7 @@ export default class App extends Component {
     this.getRoomInfo();
   }
 
-  // Get room data from Light API
+  // Fetch room data from Light API
   getRoomInfo() {
     fetch('http://localhost:3000/api/v1/device')
       .then(response => response.json())
@@ -37,7 +39,7 @@ export default class App extends Component {
       .catch(errors => console.error(errors));
   }
 
-  // Hightlight the room and displays its controller when user selects the room
+  // Hightlight the room and display its controller when user selects the room
   getCurrentRoom(info) {
     this.setState({ currentRoom: info });
   }

@@ -17,12 +17,13 @@ export default class Nav extends Component {
     }, 60000);
   }
 
+  // Get current date
   getDate() {
     return new Date().toString().slice(0, 15);
   }
 
+  // Get current time every minute
   getTime() {
-    // const time = `${new Date().toLocaleString().slice(11, 15)} ${new Date().toLocaleString().slice(19)}`;
     let time = new Date(parseInt(Date.now()));
     let localeSpecificTime = time.toLocaleTimeString();
     return localeSpecificTime.replace(/:\d+ /, ' ');

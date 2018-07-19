@@ -4,14 +4,11 @@ import Switch from 'react-toggle-switch';
 
 
 export default class Control extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   // Highlight the selected room
-  // Note: There is no class/id selector for each table row so walking DOM elements to get all table rows
+  // Note: There is no class/id selector for each table row
+  // Walk DOM elements to get all table rows
   selectRoom(roomInfo, e) {
+    this.props.getCurrentRoom(roomInfo);
     if (e) {
       // If user selects table cell or toggle switch, don't highlight it
       let currentTableRow = e.target.parentNode;
@@ -27,18 +24,19 @@ export default class Control extends Component {
       Array.from(talbeRows).forEach(row => row.classList.remove('highlight'));
       currentTableRow.classList.add('highlight');
   
-      // Make arrow to point the selected room
+      // Make arrow point to the selected room
       // Note: It's modifying pseudo elements by extending HTML element (it might not be the best approach)
       // http://mcgivery.com/htmlelement-pseudostyle-settingmodifying-before-and-after-in-javascript/
       const arrowbox = document.getElementsByClassName('arrow_box')[0];
       const newArrowLocation = (roomInfo.id - 2) * 24;
-      arrowbox.pseudoStyle('before', 'top', `${newArrowLocation}%`).pseudoStyle('after', 'top', `${newArrowLocation}%`);
+      if (arrowbox) {
+        arrowbox.pseudoStyle('before', 'top', `${newArrowLocation}%`).pseudoStyle('after', 'top', `${newArrowLocation}%`);
+      }
     }
-    this.props.getCurrentRoom(roomInfo);
   }
 
 
-  // Toggle light switch: Only toggle when user clicks the switch itself
+  // Toggle light switch: only toggle when user clicks the switch itself
   toggleSwitch(e) {
     if (e.target.className.indexOf('toggle') === -1) {
       if (e.target.className.indexOf('on') !== -1) {
