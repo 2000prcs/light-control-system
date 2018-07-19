@@ -1,18 +1,17 @@
+.nav, .user {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
 .nav {
+  justify-content: space-between;
   background-color: #222222;
   color: white;
   height: 54px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   padding-right: 0;
   padding-left: 15px; }
 
 .user {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: center;
   border-left: solid 1px grey;
   width: 200px; }
@@ -73,9 +72,6 @@
   justify-content: center;
   align-items: center; }
 
-.rs-tooltip-text {
-  margin-top: -60px !important; }
-
 .rs-control .rs-range-color {
   background: #FEC400;
   /* Old browsers */
@@ -85,16 +81,17 @@
   /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to right, #886604 40%, #FEC400 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#886604', endColorstr='#FEC400',GradientType=1 ); }
-
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#886604', endColorstr='#FEC400',GradientType=1 );
+  /* IE6-9 */ }
 .rs-control .rs-path-color {
   background-color: #a8a7a7; }
-
 .rs-control .rs-handle {
   background-color: #FEC400; }
-
 .rs-control .rs-bg-color {
   background-color: #3B3C41; }
+
+.rs-tooltip-text {
+  margin-top: -60px !important; }
 
 .arrow_box {
   position: relative;
@@ -113,15 +110,15 @@
   position: absolute;
   pointer-events: none; }
 
-.arrow_box:after {
+.arrow_box:after, .arrow_box:before {
   border-color: rgba(59, 60, 65, 0);
-  border-right-color: #3B3C41;
+  border-right-color: #3B3C41; }
+
+.arrow_box:after {
   border-width: 3px;
   margin-top: -3px; }
 
 .arrow_box:before {
-  border-color: rgba(59, 60, 65, 0);
-  border-right-color: #3B3C41;
   border-width: 9px;
   margin-top: -9px; }
 

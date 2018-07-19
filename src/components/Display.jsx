@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import $ from 'jquery';
 
 // Importing jQuery directly with window to use roundSlider jQuery plugin
 window.jQuery = window.$ = $;

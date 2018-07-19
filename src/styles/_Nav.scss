@@ -1,22 +1,24 @@
 
+%nav-shared {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 // Nav bar
 .nav {
+  @extend %nav-shared;
+  justify-content: space-between;
   background-color: #222222;
   color: white;
   height: 54px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   padding-right: 0;
   padding-left: 15px;
 }
 
 // User Info Section
 .user {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  @extend %nav-shared;
   justify-content: center;
   border-left: solid 1px grey;
   width: 200px;

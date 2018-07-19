@@ -1,7 +1,6 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'development',
   entry: './src/index.jsx',
   output: {
     path: path.resolve(__dirname, 'public'),
@@ -12,12 +11,12 @@ module.exports = {
       {
         test: /\.jsx?$/,
         include: [
-          path.resolve(__dirname, 'src')
+          path.resolve(__dirname, 'src'),
         ],
         loader: 'babel-loader',
         options: {
-          presets: ['react', 'es2015']
-        }
+          presets: ['react', 'es2015'],
+        },
       },
       {
         test: /\.scss$/,
@@ -26,6 +25,6 @@ module.exports = {
           { loader: 'sass-loader' },
         ],
       },
-    ]
-  }
-}
+    ],
+  },
+};

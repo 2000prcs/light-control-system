@@ -44,7 +44,7 @@ npm run build (for development)
 ## Running the Tests
 
 ```sh
-npm test
+npm run test
 ```
 
 ## Built With

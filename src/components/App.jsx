@@ -42,7 +42,6 @@ export default class App extends Component {
     this.setState({ currentRoom: info });
   }
 
-
   // Check if light switch is on or off
   getSwitchStatus(value) {
     const room = this.state.currentRoom;

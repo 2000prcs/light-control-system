@@ -4,8 +4,8 @@ export default class Nav extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: 'Sunday 15 July, 2018',
-      time: '8:13 PM',
+      date: 'Tuesday 17 July, 2018',
+      time: '10:37 PM',
     };
   }
 
@@ -18,18 +18,18 @@ export default class Nav extends Component {
   }
 
   getDate() {
-    const date = new Date().toString().slice(0, 15);
-    return date;
+    return new Date().toString().slice(0, 15);
   }
 
   getTime() {
-    const time = `${new Date().toLocaleString().slice(11, 15)} ${new Date().toLocaleString().slice(19)}`;
-    return time;
+    // const time = `${new Date().toLocaleString().slice(11, 15)} ${new Date().toLocaleString().slice(19)}`;
+    let time = new Date(parseInt(Date.now()));
+    let localeSpecificTime = time.toLocaleTimeString();
+    return localeSpecificTime.replace(/:\d+ /, ' ');
   }
 
 
   render() {
-
     const { userData } = this.props;
     const { date, time } = this.state;
 
