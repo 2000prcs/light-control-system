@@ -12,7 +12,7 @@
 👉 Watch Demo Video <a href="https://youtu.be/KEKBAi8L17Y">here</a>.
 <br>
 
-## Building Process
+## Build Process
 
 1. Rendered room data with [Light API](https://github.com/resin-io/light-api).
 2. Created table with the room data using [Redintion Library](https://github.com/resin-io-modules/rendition).
