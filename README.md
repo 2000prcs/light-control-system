@@ -1,11 +1,11 @@
-# Light Controlling System
+# Light Control System
 
 > Web application for a home automation light control system.
 
 ## Table of Contents
 
-1. [Usage](#Usage)
-2. [Testing](#Testing)
+1. [Usage](#usage)
+2. [Testing](#testing)
 
 ## Demo
 
