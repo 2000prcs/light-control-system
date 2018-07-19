@@ -13,6 +13,7 @@
 <br>
 
 ## Building Process
+
 1. Rendered room data with [Light API](https://github.com/resin-io/light-api).
 2. Created table with the room data using [Redintion Library](https://github.com/resin-io-modules/rendition).
 3. Rendered light switches and created toggleSwitch method with [react-toggle-switch library](https://github.com/pgrimard/react-toggle-switch).
