@@ -45,7 +45,7 @@ npm install
 > Build a client bundle with webpack: 
 
 ```sh
-npm run build (for development) 
+npm run build 
 ```
 
 ## Testing
