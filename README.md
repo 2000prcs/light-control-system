@@ -48,7 +48,7 @@ npm install
 npm run build 
 ```
 
-> Open index.html
+> Open `index.html`
 
 > Enjoy!
 
