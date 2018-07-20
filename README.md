@@ -48,6 +48,10 @@ npm install
 npm run build 
 ```
 
+> Open index.html
+
+> Enjoy!
+
 ## Testing
 
 ```sh
