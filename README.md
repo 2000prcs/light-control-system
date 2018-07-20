@@ -9,7 +9,7 @@
 
 ## Demo
 
-👉 Watch Demo Video <a href="https://youtu.be/KEKBAi8L17Y">here</a>.
+👉 Watch Demo Video <a href="https://youtu.be/KEKBAi8L17Y" target"_blank">here</a>.
 <br>
 
 ## Build Process
