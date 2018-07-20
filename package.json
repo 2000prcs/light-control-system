@@ -4,7 +4,8 @@
   "description": "Light Controlling System",
   "main": "./src/index.jsx",
   "scripts": {
-    "build": "webpack -d -w",
+    "react-dev": "webpack -d -w",
+    "build": "webpack -d",
     "style": "sass src/styles/styles.scss public/styles.css",
     "test": "jest -e --updateSnapshot --coverage"
   },
