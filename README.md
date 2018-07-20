@@ -9,8 +9,8 @@
 
 ## Demo
 
-👉 Watch Demo Video <a href="https://youtu.be/KEKBAi8L17Y" target="_blank">here</a>.
-<br>
+👉 Watch Demo Video <a href="https://youtu.be/KEKBAi8L17Y">here</a>.
+
 
 ## Build Process
 
@@ -25,6 +25,15 @@ Other libraries I considered: [React Circular Slider bar library](https://github
 8. Added detailed styling to match with the wireframe design.
 9. Achieved 85% unit testing coverage.
 
+## Requirements
+
+> User should be able to turn lightbulbs on and off, set the brightness of a lightbulb.
+
+I used React Toggle Switch to turn the lightbulbs on/off, and roundSlider to set the brightness of a lightbulb by dragging the handle. 
+
+> Setting a bulb to 0% brightness should be the equivalent of turning it off and a light bulb that is switched off should show 0% brightness.
+
+When user drags the roundSlider, a method `lightControl()` gets invoked to set the brightness value dynamically. When the brightness value is 0, a method `getSwitchStatus()` gets invoked with `false` value and it turns the light switch off. 
 
 ## Prerequisites
 
@@ -36,21 +45,21 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 From within the root directory:
 
-> Install project dependencies:
+1. Install project dependencies:
 
 ```sh
 npm install
 ```
 
-> Build a client bundle with webpack: 
+2. Build a client bundle with webpack: 
 
 ```sh
 npm run build 
 ```
 
-> Open `public/index.html` in your browser
+3. Open `public/index.html` in your browser
 
-> Enjoy!
+4. Enjoy!
 
 ## Testing
 
