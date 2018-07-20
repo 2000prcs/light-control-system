@@ -4,7 +4,7 @@ node_modules
 # MAC files
 .DS_Store
 
-# Compiled bundles (http://nodejs.org/api/addons.html)
+# Compiled bundles
 public/bundle.js
 
 # Sass
