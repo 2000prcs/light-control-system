@@ -5,7 +5,7 @@
   "main": "./src/index.jsx",
   "scripts": {
     "react-dev": "webpack -d -w",
-    "build": "webpack -d",
+    "postinstall": "webpack -d",
     "style": "sass src/styles/styles.scss public/styles.css",
     "test": "jest -e --updateSnapshot --coverage"
   },

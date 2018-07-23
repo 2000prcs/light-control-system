@@ -11,6 +11,13 @@
 
 👉 Watch Demo Video <a href="https://youtu.be/KEKBAi8L17Y">here</a>.
 
+<br>
+
+<img src="https://i.imgur.com/DorkYE4.png">
+
+## Achievements
+
+
 
 ## Build Process
 
@@ -45,21 +52,15 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 From within the root directory:
 
-1. Install project dependencies:
+1. Install project dependencies & Build a client bundle with Webpack::
 
 ```sh
 npm install
 ```
 
-2. Build a client bundle with webpack: 
+2. Open `public/index.html` in your browser
 
-```sh
-npm run build 
-```
-
-3. Open `public/index.html` in your browser
-
-4. Enjoy!
+3. Enjoy!
 
 ## Testing
 
