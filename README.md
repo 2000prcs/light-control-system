@@ -18,9 +18,9 @@
 ## Achievements
 
 1. Clean and simple UI
-2. Dynamically change brightness by sliderbar and light switches
-3. Improved maintainability to dynamically rendering data
-4. Focused on lightweight and performant code
+2. Dynamically change brightness value & lightbulb name
+3. Improved maintainability to dynamically rendering data - each child component of main App component is rendering data dynamically
+4. Responsive design for improving the user exprience
 5. Achieved 85% unit testing coverage
 
 ## Build Process
@@ -45,6 +45,15 @@ I used React Toggle Switch to turn the lightbulbs on/off, and roundSlider to set
 > Setting a bulb to 0% brightness should be the equivalent of turning it off and a light bulb that is switched off should show 0% brightness.
 
 When user drags the roundSlider, a method `lightControl()` gets invoked to set the brightness value dynamically. When the brightness value is 0, a method `getSwitchStatus()` gets invoked with `false` value and it turns the light switch off. 
+
+> User should be able to change the descriptive name of a particular light bulb.
+
+When user selects a particular room name, input field appears to allow the user can change the descriptive name in real time.
+
+> You should be able to use the web app, from a mobile device or a laptop
+
+Achieved responsive design by adding media queries for different screen sizes.
+
 
 ## Prerequisites
 

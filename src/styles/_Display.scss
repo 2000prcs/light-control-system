@@ -85,13 +85,15 @@ $background-color: #3B3C41;
     background-color: transparent !important;
   }
 
+  .arrow_box:after, .arrow_box:before {
+    border: none;
+  }
+}
+
+@media only screen and (max-width: 530px) {
   .rs-control .rs-container {
     height: 150px !important;
     width: 150px !important;
     margin-top: 25px !important;
-  }
-
-  .arrow_box:after, .arrow_box:before {
-    border: none;
   }
 }
