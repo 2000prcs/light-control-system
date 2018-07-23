@@ -1,6 +1,6 @@
 $background-color: #3B3C41;
 
-// Display 
+/* Display */
 .display {
   background-color: $background-color;
   color: white;
@@ -13,7 +13,7 @@ $background-color: #3B3C41;
 }
 
 
-// Sliderbar
+/* Sliderbar */
 .rs-control {
   .rs-range-color {
     background: #FEC400; /* Old browsers */
@@ -33,13 +33,13 @@ $background-color: #3B3C41;
   }
 }
 
-// Text in the sliderbar
+/* Text in the sliderbar */
 .rs-tooltip-text {
   margin-top: -60px !important;
 }
 
 
-// Arrow box
+/* Arrow box */
 .arrow_box {
 	position: relative;
 	background: #3B3C41;

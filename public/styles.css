@@ -41,6 +41,13 @@
 .lighting {
   font-size: 20px; }
 
+.room-name {
+  margin-left: 30px;
+  font-size: 20px; }
+
+input {
+  float: right; }
+
 .control {
   width: 100vw;
   margin-left: 20px;

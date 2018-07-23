@@ -1,12 +1,12 @@
 
-// Controller table 
+/* Controller table */
 .control {
   width: 100vw; 
   margin-left: 20px;
   margin-right: 20px;
 }
 
-// Light switch
+/* Light switch */
 .toggle-switch {
   display: flex;
   align-items: center;
@@ -21,7 +21,7 @@
 } 
 
 
-// Highlighting selected room
+/* Highlighting selected room */
 .highlight {
   background-color: #E9F4FB !important;
   -webkit-box-shadow:inset 0px 0px 0px 10px #0094E4;

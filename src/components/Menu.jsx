@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button } from 'rendition';
+import { Button, Input } from 'rendition';
 
-const Display = () => {
+const Display = ({ room, handleChange }) => {
   return (
     <div className="menu">
       <Button m={2} tertiary square>
@@ -15,10 +15,9 @@ const Display = () => {
       </Button>
       <span className="lighting">
         <i className="far fa-lightbulb" />
-        <span>
-          Lighting
-        </span>
+        Lighting
       </span>
+      { room.id ? <Input m={2} placeholder="Change Room Name" onChange={handleChange} /> : null}
     </div>
   );
 };

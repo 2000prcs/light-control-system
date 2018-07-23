@@ -5,7 +5,7 @@
   align-items: center;
 }
 
-// Nav bar
+/* Nav bar */
 .nav {
   @extend %nav-shared;
   justify-content: space-between;
@@ -16,7 +16,7 @@
   padding-left: 15px;
 }
 
-// User Info Section
+/* User Info Section */
 .user {
   @extend %nav-shared;
   justify-content: center;
@@ -24,8 +24,8 @@
   width: 200px;
 }
 
-
-// Icon
+ 
+/* Icon */
 .fa-sort-down {
   cursor: pointer;
   margin-bottom: 5px;

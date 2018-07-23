@@ -1,12 +1,13 @@
 $background: #EBEEF3;
 $font-color: black;
+$font-size: 20px;
 
-// Menu bar
+/* Menu bar */
 .menu {
   height: 80px;
 }
 
-// Buttons
+/* Buttons */
 .llOjia {
   margin: 0 !important;
   background: $background !important;
@@ -20,7 +21,7 @@ $font-color: black;
 
 
 
-// Icons
+/* Icons */
 .fa-angle-left {
   margin-right: 10px;
 }
@@ -29,8 +30,13 @@ $font-color: black;
 }
 
 
-
-// Lighting text
+/* Lighting text */
 .lighting {
-  font-size: 20px;
+  font-size: $font-size;
+}
+
+/* Input */
+
+input {
+  float: right;
 }

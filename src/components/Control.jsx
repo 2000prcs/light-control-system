@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import { Table, Provider } from 'rendition';
+import { Table, Provider, Input } from 'rendition';
 import Switch from 'react-toggle-switch';
 
 
 export default class Control extends Component {
   // Highlight the selected room
-  // Note: There is no class/id selector for each table row
-  // Walk DOM elements to get all table rows
+  // Note: Walking DOM elements to get all table rows since there is no class/id selector for each table row
+  // Empty input value when user selects a new room
   selectRoom(roomInfo, e) {
     this.props.getCurrentRoom(roomInfo);
+    document.querySelector('input').value = '';
     if (e) {
       // If user selects table cell or toggle switch, don't highlight it
       let currentTableRow = e.target.parentNode;
@@ -34,7 +35,6 @@ export default class Control extends Component {
       }
     }
   }
-
 
   // Toggle light switch: only toggle when user clicks the switch itself
   toggleSwitch(e) {
@@ -63,7 +63,7 @@ export default class Control extends Component {
         field: 'name',
         label: 'Room',
         sortable: true,
-        render: value => (<b>{value}</b>),
+        render: value => <span><b>{value}</b></span>,
       },
       {
         field: 'active',

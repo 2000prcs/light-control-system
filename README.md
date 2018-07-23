@@ -13,11 +13,15 @@
 
 <br>
 
-<img src="https://i.imgur.com/DorkYE4.png">
+<img src="https://i.imgur.com/0dPWIoB.png">
 
 ## Achievements
 
-
+1. Clean and simple UI
+2. Dynamically change brightness by sliderbar and light switches
+3. Improved maintainability to dynamically rendering data
+4. Focused on lightweight and performant code
+5. Achieved 85% unit testing coverage
 
 ## Build Process
 
@@ -30,7 +34,7 @@ Other libraries I considered: [React Circular Slider bar library](https://github
 6. To make arrow from the Display point to the highlighted room, I used [pseudostyle library](http://mcgivery.com/htmlelement-pseudostyle-settingmodifying-before-and-after-in-javascript) to change 'top' style attribute dynamically.
 7. Used [HTML Color Codes](https://html-color-codes.info/colors-from-image) to match components colors with the wireframe design. 
 8. Added detailed styling to match with the wireframe design.
-9. Achieved 85% unit testing coverage.
+9. Added automatic testing for each components.
 
 ## Requirements
 

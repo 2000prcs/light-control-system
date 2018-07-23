@@ -22,6 +22,7 @@ export default class App extends Component {
     this.getCurrentRoom = this.getCurrentRoom.bind(this);
     this.lightControl = this.lightControl.bind(this);
     this.getSwitchStatus = this.getSwitchStatus.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   // Send GET request to server when the component is mounted
@@ -64,13 +65,20 @@ export default class App extends Component {
     this.setState({ currentRoom: room });
   }
 
+  handleChange(e) {
+    document.querySelector('.highlight a span b').innerText = e.target.value;
+    const room = this.state.currentRoom;
+    room.name = e.target.value;
+    this.setState({ currentRoom: room });
+  }
+
   render() {
     const { data, currentRoom, userData } = this.state;
 
     return (
       <div className="container">
         <Nav userData={userData} />
-        <Menu room={currentRoom} />
+        <Menu room={currentRoom} handleChange={this.handleChange} />
         <div className="main">
           <div className="control">
             <Control room={data} getCurrentRoom={this.getCurrentRoom} getSwitchStatus={this.getSwitchStatus} />
