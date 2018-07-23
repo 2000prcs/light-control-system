@@ -26,6 +26,7 @@ ShallowWrapper {
           }
         />,
         <Display
+          handleChange={[Function]}
           room={Object {}}
         />,
         <div
@@ -123,6 +124,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
+          "handleChange": [Function],
           "room": Object {},
         },
         "ref": null,
@@ -383,6 +385,7 @@ ShallowWrapper {
             }
           />,
           <Display
+            handleChange={[Function]}
             room={Object {}}
           />,
           <div
@@ -480,6 +483,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
+            "handleChange": [Function],
             "room": Object {},
           },
           "ref": null,

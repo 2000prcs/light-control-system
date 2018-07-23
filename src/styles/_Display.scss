@@ -74,3 +74,24 @@ $background-color: #3B3C41;
 	border-width: 9px;
 	margin-top: -9px;
 }
+
+
+@media only screen and (max-width: 730px) {
+  .display {
+    width: 96vw;
+    height: 50vw;
+  }
+  .rs-control .rs-overlay  {
+    background-color: transparent !important;
+  }
+
+  .rs-control .rs-container {
+    height: 150px !important;
+    width: 150px !important;
+    margin-top: 25px !important;
+  }
+
+  .arrow_box:after, .arrow_box:before {
+    border: none;
+  }
+}

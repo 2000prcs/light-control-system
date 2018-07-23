@@ -1,9 +1,11 @@
 
 /* Controller table */
-.control {
-  width: 100vw; 
-  margin-left: 20px;
-  margin-right: 20px;
+@media only screen and (min-width: 730px) {
+  .control {
+    width: 100vw; 
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
 
 /* Light switch */

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Input } from 'rendition';
 
+// Input field appears when user selects a particular lightbulb
 const Display = ({ room, handleChange }) => {
   return (
     <div className="menu">

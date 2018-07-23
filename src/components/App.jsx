@@ -65,8 +65,12 @@ export default class App extends Component {
     this.setState({ currentRoom: room });
   }
 
+  // Change room name as user types
   handleChange(e) {
-    document.querySelector('.highlight a span b').innerText = e.target.value;
+    const currentRoomNameNode = document.querySelector('.highlight a span b');
+    if (currentRoomNameNode) {
+      currentTableNameNode.innerText = e.target.value;
+    }
     const room = this.state.currentRoom;
     room.name = e.target.value;
     this.setState({ currentRoom: room });

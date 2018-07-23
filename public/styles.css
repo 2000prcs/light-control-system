@@ -3,6 +3,7 @@
   flex-direction: row;
   align-items: center; }
 
+/* Nav bar */
 .nav {
   justify-content: space-between;
   background-color: #222222;
@@ -11,18 +12,22 @@
   padding-right: 0;
   padding-left: 15px; }
 
+/* User Info Section */
 .user {
   justify-content: center;
   border-left: solid 1px grey;
   width: 200px; }
 
+/* Icon */
 .fa-sort-down {
   cursor: pointer;
   margin-bottom: 5px; }
 
+/* Menu bar */
 .menu {
   height: 80px; }
 
+/* Buttons */
 .llOjia {
   margin: 0 !important;
   background: #EBEEF3 !important;
@@ -32,27 +37,31 @@
   background: #EBEEF3 !important;
   color: black !important; }
 
+/* Icons */
 .fa-angle-left {
   margin-right: 10px; }
 
 .fa-lightbulb {
   margin: 10px; }
 
+/* Lighting text */
 .lighting {
   font-size: 20px; }
 
-.room-name {
-  margin-left: 30px;
-  font-size: 20px; }
-
+/* Input */
 input {
   float: right; }
 
-.control {
-  width: 100vw;
-  margin-left: 20px;
-  margin-right: 20px; }
-
+@media only screen and (max-width: 730px) {
+  input {
+    width: 50px; } }
+/* Controller table */
+@media only screen and (min-width: 730px) {
+  .control {
+    width: 100vw;
+    margin-left: 20px;
+    margin-right: 20px; } }
+/* Light switch */
 .toggle-switch {
   display: flex;
   align-items: center; }
@@ -63,12 +72,14 @@ input {
 .switch.on {
   background: #4DB312 !important; }
 
+/* Highlighting selected room */
 .highlight {
   background-color: #E9F4FB !important;
   -webkit-box-shadow: inset 0px 0px 0px 10px #0094E4;
   -moz-box-shadow: inset 0px 0px 0px 10px #0094E4;
   box-shadow: inset 3px 0px 0px 0px  #0094E4; }
 
+/* Display */
 .display {
   background-color: #3B3C41;
   color: white;
@@ -79,6 +90,7 @@ input {
   justify-content: center;
   align-items: center; }
 
+/* Sliderbar */
 .rs-control .rs-range-color {
   background: #FEC400;
   /* Old browsers */
@@ -97,9 +109,11 @@ input {
 .rs-control .rs-bg-color {
   background-color: #3B3C41; }
 
+/* Text in the sliderbar */
 .rs-tooltip-text {
   margin-top: -60px !important; }
 
+/* Arrow box */
 .arrow_box {
   position: relative;
   background: #3B3C41;
@@ -129,11 +143,31 @@ input {
   border-width: 9px;
   margin-top: -9px; }
 
+@media only screen and (max-width: 730px) {
+  .display {
+    width: 96vw;
+    height: 50vw; }
+
+  .rs-control .rs-overlay {
+    background-color: transparent !important; }
+
+  .rs-control .rs-container {
+    height: 150px !important;
+    width: 150px !important;
+    margin-top: 25px !important; }
+
+  .arrow_box:after, .arrow_box:before {
+    border: none; } }
 body {
   font-size: 15px;
   font-family: "Roboto", "Arial", sans-serif; }
 
 .main {
   display: flex; }
+
+@media only screen and (max-width: 730px) {
+  .main {
+    display: flex;
+    flex-direction: column-reverse; } }
 
 /*# sourceMappingURL=styles.css.map */

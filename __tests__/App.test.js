@@ -69,4 +69,13 @@ describe('App component', () => {
     expect(currentRoomId).toBe(78);
     AppWrapper.unmount();
   });
+
+  test('Should change the selected room name as a user types in the input', () => {
+    const AppWrapper = mount(<App />);
+    AppWrapper.setState({ currentRoom: roomData });
+    AppWrapper.find('input').simulate('change', { target: { value: 'karaoke' } }); // Mock event object, for testing purposes
+    AppWrapper.update();
+    expect(AppWrapper.state().currentRoom.name).toBe('karaoke');
+    AppWrapper.unmount();
+  });
 });

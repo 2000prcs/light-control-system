@@ -4,12 +4,17 @@ import Switch from 'react-toggle-switch';
 
 
 export default class Control extends Component {
+
   // Highlight the selected room
   // Note: Walking DOM elements to get all table rows since there is no class/id selector for each table row
-  // Empty input value when user selects a new room
   selectRoom(roomInfo, e) {
     this.props.getCurrentRoom(roomInfo);
-    document.querySelector('input').value = '';
+
+    // Empty input value when user selects a new room
+    if (document.querySelector('input')) {
+      document.querySelector('input').value = '';
+    }
+
     if (e) {
       // If user selects table cell or toggle switch, don't highlight it
       let currentTableRow = e.target.parentNode;

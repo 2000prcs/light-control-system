@@ -44,5 +44,6 @@ describe('Display component', () => {
     DisplayWrapper.unmount();
     DisplayWrapper.update();
     expect(DisplayWrapper.find('#slider')).toHaveLength(0);
+    DisplayWrapper.unmount();
   });
 });

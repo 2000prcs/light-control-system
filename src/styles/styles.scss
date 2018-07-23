@@ -13,3 +13,10 @@ body {
 .main {
   display: flex;
 }
+
+@media only screen and (max-width: 730px) {
+  .main {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}

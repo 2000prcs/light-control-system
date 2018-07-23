@@ -4,7 +4,16 @@ exports[`Menu component Should render Menu 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Display />,
+  Symbol(enzyme.__unrendered__): <Display
+    room={
+      Object {
+        "active": false,
+        "brightness": 50,
+        "id": 1,
+        "name": "Balcony",
+      }
+    }
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -45,10 +54,12 @@ ShallowWrapper {
           <i
             className="far fa-lightbulb"
           />
-          <span>
-            Lighting
-          </span>
+          Lighting
         </span>,
+        <WithTheme(Component)
+          m={2}
+          placeholder="Change Room Name"
+        />,
       ],
       "className": "menu",
     },
@@ -133,9 +144,7 @@ ShallowWrapper {
             <i
               className="far fa-lightbulb"
             />,
-            <span>
-              Lighting
-            </span>,
+            "Lighting",
           ],
           "className": "lighting",
         },
@@ -152,19 +161,22 @@ ShallowWrapper {
             "rendered": null,
             "type": "i",
           },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Lighting",
-            },
-            "ref": null,
-            "rendered": "Lighting",
-            "type": "span",
-          },
+          "Lighting",
         ],
         "type": "span",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "m": 2,
+          "onChange": undefined,
+          "placeholder": "Change Room Name",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
       },
     ],
     "type": "div",
@@ -203,10 +215,12 @@ ShallowWrapper {
             <i
               className="far fa-lightbulb"
             />
-            <span>
-              Lighting
-            </span>
+            Lighting
           </span>,
+          <WithTheme(Component)
+            m={2}
+            placeholder="Change Room Name"
+          />,
         ],
         "className": "menu",
       },
@@ -291,9 +305,7 @@ ShallowWrapper {
               <i
                 className="far fa-lightbulb"
               />,
-              <span>
-                Lighting
-              </span>,
+              "Lighting",
             ],
             "className": "lighting",
           },
@@ -310,19 +322,22 @@ ShallowWrapper {
               "rendered": null,
               "type": "i",
             },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Lighting",
-              },
-              "ref": null,
-              "rendered": "Lighting",
-              "type": "span",
-            },
+            "Lighting",
           ],
           "type": "span",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "m": 2,
+            "onChange": undefined,
+            "placeholder": "Change Room Name",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
         },
       ],
       "type": "div",
