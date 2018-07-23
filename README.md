@@ -13,7 +13,7 @@
 
 <br>
 
-<img src="https://i.imgur.com/0dPWIoB.png">
+<img src="https://i.imgur.com/4sGotIG.png">
 
 ## Achievements
 

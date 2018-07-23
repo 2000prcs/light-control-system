@@ -69,7 +69,7 @@ export default class App extends Component {
   handleChange(e) {
     const currentRoomNameNode = document.querySelector('.highlight a span b');
     if (currentRoomNameNode) {
-      currentTableNameNode.innerText = e.target.value;
+      currentRoomNameNode.innerText = e.target.value;
     }
     const room = this.state.currentRoom;
     room.name = e.target.value;
