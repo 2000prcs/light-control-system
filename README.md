@@ -13,7 +13,7 @@
 
 <br>
 
-<img src="https://i.imgur.com/4sGotIG.png">
+<img src="https://i.imgur.com/waXmfvb.png">
 
 ## Achievements
 
@@ -21,36 +21,38 @@
 2. Dynamically change brightness value & lightbulb name
 3. Improved maintainability to dynamically rendering data - each child component of main App component is rendering data dynamically
 4. Responsive design for improving the user exprience
-5. Achieved 85% unit testing coverage
+5. Automated testing for components
 
 ## Build Process
 
 1. Rendered room data with [Light API](https://github.com/resin-io/light-api).
-2. Created table with the room data using [Redintion Library](https://github.com/resin-io-modules/rendition).
+2. Created table with the room data using [Rendition Library](https://github.com/resin-io-modules/rendition).
 3. Rendered light switches and created toggleSwitch method with [react-toggle-switch library](https://github.com/pgrimard/react-toggle-switch).
-4. Looked into different libraries for rendering the round sliderbar for light controlling, and decided to go with [roundSlider jQuery plugin](https://github.com/soundar24/roundSlider). I made this decision in order to improve UI with a better user exprience. 
+4. Looked into different libraries for rendering the round sliderbar for light control, and decided to go with [roundSlider jQuery plugin](https://github.com/soundar24/roundSlider). I made this decision in order to improve UI with a better user exprience. 
 Other libraries I considered: [React Circular Slider bar library](https://github.com/alexsyo/react-circular-slider-bar),  [React Range slider library](https://whoisandy.github.io/react-rangeslider)
 5. To highlight the room user selects, I added 'highlight' class to the selected table row.
 6. To make arrow from the Display point to the highlighted room, I used [pseudostyle library](http://mcgivery.com/htmlelement-pseudostyle-settingmodifying-before-and-after-in-javascript) to change 'top' style attribute dynamically.
 7. Used [HTML Color Codes](https://html-color-codes.info/colors-from-image) to match components colors with the wireframe design. 
 8. Added detailed styling to match with the wireframe design.
-9. Added automatic testing for each components.
+9. Input field appears when user selects a particular light bulb to change the name.
+10. With CSS media queries, achieved responsive design for different screen sizes.
+11. Implemented automatic testing for each components.
 
 ## Requirements
 
-> User should be able to turn lightbulbs on and off, set the brightness of a lightbulb.
+1. User should be able to turn lightbulbs on and off, set the brightness of a lightbulb.
 
 I used React Toggle Switch to turn the lightbulbs on/off, and roundSlider to set the brightness of a lightbulb by dragging the handle. 
 
-> Setting a bulb to 0% brightness should be the equivalent of turning it off and a light bulb that is switched off should show 0% brightness.
+2. Setting a bulb to 0% brightness should be the equivalent of turning it off and a light bulb that is switched off should show 0% brightness.
 
 When user drags the roundSlider, a method `lightControl()` gets invoked to set the brightness value dynamically. When the brightness value is 0, a method `getSwitchStatus()` gets invoked with `false` value and it turns the light switch off. 
 
-> User should be able to change the descriptive name of a particular light bulb.
+3. User should be able to change the descriptive name of a particular light bulb.
 
-When user selects a particular room name, input field appears to allow the user can change the descriptive name in real time.
+When user selects a particular room name, input field appears to allow the user to change the descriptive name in real time.
 
-> You should be able to use the web app, from a mobile device or a laptop
+4. You should be able to use the web app, from a mobile device or a laptop
 
 Achieved responsive design by adding media queries for different screen sizes.
 
